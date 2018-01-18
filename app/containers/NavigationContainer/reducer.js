@@ -4,29 +4,21 @@ import {
   REQUEST_TOPICS,
   REQUEST_TOPICS_SUCCEEDED,
   REQUEST_TOPICS_FAILED,
+  SELECT_TOPIC,
 } from './constants';
 
 const initialState = fromJS({
-  topics: [
-    {
-      name: 'libraries',
-      description: 'Links to open source libraries',
-    },
-    {
-      name: 'apps',
-      description: 'links to new exciring apps',
-    },
-    {
-      name: 'news',
-      description: 'links to programming related news and articles',
-    },
-  ],
+  topics: [],
 });
 
 function navigationContainerReducer(state = initialState, action) {
   switch (action.type) {
-    // case DEFAULT_ACTION:
-    //   return state;
+    case REQUEST_TOPICS_SUCCEEDED:
+      return state.set('topics', action.topics);
+
+    case SELECT_TOPIC:
+      return state.set('selectedTopic', action.topic);
+
     default:
       return state;
   }
