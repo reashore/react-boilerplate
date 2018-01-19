@@ -1,5 +1,6 @@
 
 import React from 'react';
+import classNames from 'classnames';
 import styles from './styles.css';
 
 function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen }) {
@@ -10,7 +11,7 @@ function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen })
   ));
 
   return (
-    <div className={styles.drawer}>
+    <div className={classNames(styles.drawer, { [styles.drawerOpen]: isDrawerOpen })}>
       {itemNodes}
     </div>
   );
