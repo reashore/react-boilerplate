@@ -1,7 +1,7 @@
 
 import { call, put } from 'redux-saga/effects';
 import { takeLatest } from 'redux-saga';
-import { SELECT_TOPIC } from './../NavigationContainer/constants';
+// import { SELECT_TOPIC } from './../NavigationContainer/constants';
 import { requestLinksSucceeded, requestLinksFailed } from './actions';
 
 function fetchLinksFromServer(topic) {
@@ -19,7 +19,7 @@ function* fetchLinks(action) {
 }
 
 export function* defaultSaga() {
-  yield* takeLatest(SELECT_TOPIC, fetchLinks);
+  // yield* takeLatest(SELECT_TOPIC, fetchLinks);
 }
 
 export default [
